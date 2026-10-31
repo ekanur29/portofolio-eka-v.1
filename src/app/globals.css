@@ -1,26 +1,197 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-baloo: 'Baloo 2', cursive;
+  --font-mono: 'Space Mono', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-baloo);
+  background-color: #FFF8E7;
+  color: #111111;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+.cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background: #E8B947;
+  border: 2.5px solid #111;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #2E77A3;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+}
+
+/* Grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(#2E77A3 1px, transparent 1px),
+    linear-gradient(90deg, #2E77A3 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.06;
+}
+
+/* Comic shadow utilities */
+.shadow-comic { box-shadow: 5px 5px 0px 0px #111111; }
+.shadow-comic-lg { box-shadow: 7px 7px 0px 0px #111111; }
+.shadow-comic-hover { box-shadow: 10px 10px 0px 0px #111111; }
+
+/* Scroll fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Terminal cursor blink */
+.term-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: #E8B947;
+  animation: blink 1s step-end infinite;
+  vertical-align: bottom;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Nav link hover */
+.nav-link {
+  transition: all 0.2s ease;
+}
+.nav-link:hover {
+  background: #E8B947;
+  box-shadow: 3px 3px 0 #111;
+  transform: translate(-2px, -2px);
+}
+
+/* Skill chip hover */
+.skill-chip {
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.skill-chip:hover {
+  transform: translate(-3px, -3px) rotate(-2deg);
+  box-shadow: 7px 7px 0 #111;
+}
+
+/* Project card hover */
+.project-card {
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: rotate(0deg) translate(-4px, -8px) !important;
+  box-shadow: 10px 10px 0 #111111 !important;
+}
+
+/* Cert card hover */
+.cert-card {
+  transition: all 0.2s ease;
+}
+.cert-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 #111;
+}
+
+/* Fact card hover */
+.fact-card {
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.fact-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 #111;
+}
+
+/* Button hover */
+.btn-comic {
+  transition: all 0.15s ease;
+}
+.btn-comic:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px 0 #111;
+}
+.btn-comic:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+/* About text card tilt */
+.tilt-card {
+  transition: transform 0.3s ease;
+}
+.tilt-card:hover {
+  transform: rotate(0deg) !important;
+}
+
+/* Tab button */
+.tab-btn {
+  transition: all 0.2s ease;
+  font-family: var(--font-baloo);
+}
+.tab-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #111;
+}
+.tab-btn.active {
+  background: #E8B947;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #111;
+}
+
+/* Social btn hover */
+.social-btn {
+  transition: all 0.2s ease;
+}
+.social-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #111;
+}
+
+/* TOEIC badge tilt */
+.toeic-badge {
+  transition: transform 0.3s ease;
+}
+.toeic-badge:hover {
+  transform: rotate(0deg) !important;
 }
