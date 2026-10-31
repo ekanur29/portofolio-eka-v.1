@@ -2,9 +2,10 @@ const projects = [
   {
     title: "Occusense",
     category: "IoT",
-    desc: "Mengembangkan sistem berbasis IoT menggunakan sensor ultrasonik untuk mendeteksi keberadaan pengguna, dengan output status secara real-time melalui LCD dan indikator LED (merah/hijau).",
+    desc: "Mengembangkan sistem berbasis IoT menggunakan sensor ultrasonik untuk mendeteksi keberadaan pengguna toilet, dengan output status secara real-time melalui LCD dan indikator LED (merah/hijau).",
     tech: ["ESP 8266", "LCD i2c", "Ultrasonic Sensor"],
     role: "",
+    image: "/images/projek-occusense.png",
   },
   {
     title: "SIKOMI",
@@ -12,6 +13,7 @@ const projects = [
     desc: "Mengembangkan sistem IoT untuk monitoring suhu dan ketinggian air kolam menggunakan sensor DS18B20 dan ultrasonik. Data ditampilkan secara real-time melalui LCD dan bot Telegram, serta dilengkapi buzzer sebagai notifikasi ketika kondisi kolam tidak normal.",
     tech: ["ESP32", "Temperature Sensor (DS18B20)", "Ultrasonic Sensor", "LCD", "Telegram Bot", "Buzzer"],
     role: "",
+    image: "/images/projek-sikomi.png",
   },
   {
     title: "Networking Project",
@@ -21,11 +23,12 @@ const projects = [
     role: "VLAN, trunk, router, switch, dan basic network configuration.",
   },
   {
-    title: "UI/UX Design",
-    category: "Design",
-    desc: "Project desain interface menggunakan Figma.",
+    title: "SijaLearn",
+    category: "UI/UX Design",
+    desc: "Project website pembelajaran interface menggunakan Figma.",
     tech: ["Figma"],
     role: "",
+    image: "/images/projek-sijalearn.png",
   },
   {
     title: "Canva Design",
@@ -72,7 +75,9 @@ function WorkSection() {
               </p>
             )}
           </div>
-          <div className="project-visual">[PROJECT SCREENSHOT]</div>
+          <div className="project-visual">
+            <img src={p.image} alt={p.title} />
+          </div>
         </article>
       ))}
     </section>

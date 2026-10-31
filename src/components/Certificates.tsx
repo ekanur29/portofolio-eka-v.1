@@ -25,13 +25,13 @@ const items = [
     year: "2025",
   },
   {
-    title: "Generative AI Fundamentals Training",
-    org: "AI Opportunity Fund Asia Pacific",
+    title: "AI Opportunity Fund Asia Pacific Generative AI Fundamentals Training",
+    org: "Codepolitan",
     year: "2026",
   },
   {
     title: "Career Readiness & Green Mindset Training",
-    org: "",
+    org: "Save The Children",
     year: "2026",
   },
 ];

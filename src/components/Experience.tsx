@@ -5,7 +5,7 @@ const items = [
 },
 
 {
-  title: "OSIS — Humas Divisi Kebersihan",
+  title: "SIJA — Humas Divisi Kebersihan",
   desc: "Menyampaikan informasi dan jadwal kebersihan, mengelola rekap absensi serta dokumentasi, dan membantu koordinasi siswa dalam kegiatan kerja bakti.",
 },
 ];
